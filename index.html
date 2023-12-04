@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="./images/logo.svg" alt="" />
+    </header>
+
+    <main>
+      <section class="calculations">
+        <form action="">
+          <fieldset id="bill_amount">
+            <legend>Bill</legend>
+            <label for="bill" id="bill_label">
+              <small>Can't be zero</small>
+              <img class="dollar" src="./images/icon-dollar.svg" alt="" />
+              <input type="text" name="bill" id="bill" value="0" />
+            </label>
+          </fieldset>
+          <fieldset id="tip_select">
+            <legend>Select Tip %</legend>
+            <label for="five_percent" class="percent">
+              <input type="radio" value="5%" id="five_percent" name="tip" />
+              <span>5%</span>
+            </label>
+            <label for="ten_percent" class="percent">
+              <input type="radio" value="10%" id="ten_percent" name="tip" />
+              <span>10%</span>
+            </label>
+            <label for="fifthteen_percent" class="percent">
+              <input
+                type="radio"
+                value="15%"
+                id="fifthteen_percent"
+                name="tip"
+              />
+              <span>15%</span>
+            </label>
+            <label for="twenty_five_percent" class="percent">
+              <input
+                type="radio"
+                value="25%"
+                id="twenty_five_percent"
+                name="tip"
+              />
+              <span>25%</span>
+            </label>
+            <label for="fifty_percent" class="percent">
+              <input type="radio" value="50%" id="fifty_percent" name="tip" />
+              <span>50%</span>
+            </label>
+            <label for="custom_percent" class="percent">
+              <input
+                type="text"
+                value="custom"
+                id="custom_percent"
+                name="tip"
+              />
+              <span>custom</span>
+            </label>
+          </fieldset>
+          <fieldset id="number_of_people">
+            <legend>Number of People</legend>
+            <label for="number_people" id="people">
+              <small>Can't be zero</small>
+              <img class="person" src="./images/icon-person.svg" alt="" />
+              <input type="text" id="number_people" value="0" />
+            </label>
+          </fieldset>
+        </form>
+      </section>
+
+      <section class="display_calculations">
+        <div class="grid">
+          <div class="tip_amount_left">
+            <h5>Tip Amount</h5>
+            <small>/ person</small>
+          </div>
+          <div class="tip_amount_right">
+            <span id="tip_amount">$4.27</span>
+          </div>
+          <div class="total_amount_left">
+            <h5>Total</h5>
+            <small>/ person</small>
+          </div>
+          <div class="total_amount_right">
+            <span id="total_amount">$32.79</span>
+          </div>
+          <button class="btn">reset</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Joe Sexton</a>.
+      </div>
+    </footer>
+  </body>
+</html>

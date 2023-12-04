@@ -1,0 +1,117 @@
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --gray-cyan: hsl(184, 14%, 56%);
+  --light-gray-cyan: hsl(185, 41%, 84%);
+  --very-light-gray-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--light-gray-cyan);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  font-family: 'Space Mono', sans-serif;
+}
+
+header {
+  margin-top: 4rem;
+}
+
+main {
+  background-color: var(--white);
+  width: 100%;
+  padding: 2rem;
+  border-radius: 20px;
+  margin: 3rem 0;
+}
+
+legend {
+  color: var(--gray-cyan);
+}
+
+fieldset {
+  border: none;
+  margin-bottom: 1rem;
+}
+
+#bill_amount,
+#number_of_people {
+  padding: 1rem 0;
+}
+
+#bill_label,
+#people {
+  position: relative;
+  margin-top: 2rem;
+}
+
+label > small {
+  visibility: hidden;
+  position: absolute;
+  top: -57px;
+  right: 0;
+  font-size: 1em;
+  color: orange;
+}
+
+#bill,
+#number_people {
+  width: 100%;
+  padding: 0.3rem 1rem;
+  background-color: var(--very-light-gray-cyan);
+  border: none;
+  font-size: 1.5rem;
+  font-family: 'Space Mono', sans-serif;
+  color: var(--gray-cyan);
+  text-align: right;
+  border-radius: 5px;
+}
+
+#bill:focus,
+#number_people:focus {
+  outline: 2px solid var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.dollar,
+.person {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+#tip_select {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.percent {
+  position: relative;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.percent input {
+  opacity: 0.3;
+  position: absolute;
+  padding: 2rem;
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.percent span {
+  position: absolute;
+}
