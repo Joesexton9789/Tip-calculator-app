@@ -43,18 +43,18 @@
             <label for="bill" id="bill_label">
               <small>Can't be zero</small>
               <img class="dollar" src="./images/icon-dollar.svg" alt="" />
-              <input type="text" name="bill" id="bill" value="0" />
+              <input type="text" name="bill" id="bill" placeholder="0" />
             </label>
           </fieldset>
           <fieldset id="tip_select">
             <legend>Select Tip %</legend>
             <label for="five_percent" class="percent">
               <input type="radio" value="5%" id="five_percent" name="tip" />
-              <span>5%</span>
+              <span class="radio_text">5%</span>
             </label>
             <label for="ten_percent" class="percent">
               <input type="radio" value="10%" id="ten_percent" name="tip" />
-              <span>10%</span>
+              <span class="radio_text">10%</span>
             </label>
             <label for="fifthteen_percent" class="percent">
               <input
@@ -63,7 +63,7 @@
                 id="fifthteen_percent"
                 name="tip"
               />
-              <span>15%</span>
+              <span class="radio_text">15%</span>
             </label>
             <label for="twenty_five_percent" class="percent">
               <input
@@ -72,20 +72,19 @@
                 id="twenty_five_percent"
                 name="tip"
               />
-              <span>25%</span>
+              <span class="radio_text">25%</span>
             </label>
             <label for="fifty_percent" class="percent">
               <input type="radio" value="50%" id="fifty_percent" name="tip" />
-              <span>50%</span>
+              <span class="radio_text">50%</span>
             </label>
-            <label for="custom_percent" class="percent">
+            <label for="custom_percent" class="percent custom">
               <input
                 type="text"
-                value="custom"
                 id="custom_percent"
                 name="tip"
+                placeholder="Custom"
               />
-              <span>custom</span>
             </label>
           </fieldset>
           <fieldset id="number_of_people">
@@ -93,7 +92,7 @@
             <label for="number_people" id="people">
               <small>Can't be zero</small>
               <img class="person" src="./images/icon-person.svg" alt="" />
-              <input type="text" id="number_people" value="0" />
+              <input type="text" id="number_people" placeholder="0" />
             </label>
           </fieldset>
         </form>
@@ -115,7 +114,7 @@
           <div class="total_amount_right">
             <span id="total_amount">$32.79</span>
           </div>
-          <button class="btn">reset</button>
+          <button class="btn grid-span-two-cols">reset</button>
         </div>
       </section>
     </main>
