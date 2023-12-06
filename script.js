@@ -68,7 +68,7 @@ function reset() {
   totalAmount.innerText = '$0.00'
 }
 
-bill.addEventListener('change', checkValidInputOnBill)
-numberOfPeople.addEventListener('change', checkValidInputOnPeople)
+bill.addEventListener('input', checkValidInputOnBill)
+numberOfPeople.addEventListener('input', checkValidInputOnPeople)
 resetBtn.addEventListener('click', reset)
-form.addEventListener('change', getTotal)
+form.addEventListener('input', getTotal)
