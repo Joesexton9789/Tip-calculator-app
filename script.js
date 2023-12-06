@@ -10,68 +10,50 @@ const smallTag = label.querySelector('small')
 const billSmallTag = label2.querySelector('small')
 const radio = document.querySelectorAll("input[type='radio']")
 
-function displayCalculations(e) {
-  e.preventDefault()
+let billTotal
+let total
+let tip
+let people
 
-  let tipPercent = parseFloat(form.tip.value)
-  let billAmount = parseFloat(bill.value)
-  let personAmount = parseFloat(numberOfPeople.value)
-  let tip = (billAmount * tipPercent) / personAmount.toFixed(2)
-  let total = parseFloat((billAmount + tip) / personAmount)
-  console.log(billAmount)
+function getTotal() {
+  billTotal = parseFloat(bill.value)
+  people = parseFloat(numberOfPeople.value)
+  tip = parseFloat(form['tip'].value * billTotal)
+  total = parseFloat((billTotal + tip) / people).toFixed(2)
+  console.log(billTotal)
+  console.log(people)
   console.log(tip)
-  console.log(personAmount)
-  console.log((billAmount + tip) / personAmount)
 
-  if (personAmount && billAmount && tipPercent) {
-    totalAmount.innerText = `$${total.toFixed(2)}`
-    tipAmount.innerText = `$${tip.toFixed(2)}`
-  } else {
+  console.log(total)
+  if (isNaN(total)) {
     totalAmount.innerText = '$0.00'
+  } else {
+    tipAmount.innerText = `$${parseFloat(tip / people).toFixed(2)}`
+    totalAmount.innerText = `$${total}`
   }
 }
 
-function getTipPerPerson(tip) {
-  const tipTotal = parseFloat
-}
-
-function getTotalPerPerson(bill, people, tip) {
-  return Number.parseFloat((bill + tip) / people).toFixed(2)
-}
-
-function showError(label, message) {
-  const smallText = label.querySelector('small')
-  smallText.innerText = message
-}
-
-function checkValidInputOnBill(e) {
-  e.preventDefault()
-
-  const validInputs = /[0-9]/g
-  const input = bill.value
-  if (!validInputs.test(e.key) && e.key !== '.' && e.key !== 'Backspace') {
-    billSmallTag.style.visibility = 'visible'
-    showError(label2, 'Invalid Input, use only numbers.')
+function checkValidInputOnBill() {
+  if (isNaN(bill.value)) {
     bill.style.outlineColor = 'orange'
-    bill.removeEventListener('keyup', checkValidInputOnBill)
+    billSmallTag.innerText = 'Invalid input.'
+    billSmallTag.style.visibility = 'visible'
   } else {
-    bill.addEventListener('keyup', checkValidInputOnBill)
-    billSmallTag.style.visibility = 'hidden'
     bill.style.outlineColor = 'hsl(172, 67%, 45%)'
+    billSmallTag.innerText = ''
+    billSmallTag.style.visibility = 'hidden'
   }
 }
 
-function checkValidInputOnPeople(e) {
-  e.preventDefault()
-
-  const validInputs = /[0-9]/g
-  if (!validInputs.test(e.key) && e.key !== '.' && e.key !== 'Backspace') {
-    smallTag.style.visibility = 'visible'
-    showError(label, 'Invalid Input')
+function checkValidInputOnPeople() {
+  if (isNaN(numberOfPeople.value)) {
     numberOfPeople.style.outlineColor = 'orange'
+    smallTag.innerText = 'Invalid input.'
+    smallTag.style.visibility = 'visible'
   } else {
-    smallTag.style.visibility = 'hidden'
     numberOfPeople.style.outlineColor = 'hsl(172, 67%, 45%)'
+    smallTag.innerText = ''
+    smallTag.style.visibility = 'hidden'
   }
 }
 
@@ -86,7 +68,7 @@ function reset() {
   totalAmount.innerText = '$0.00'
 }
 
-form.addEventListener('keyup', displayCalculations)
-bill.addEventListener('keyup', checkValidInputOnBill)
-numberOfPeople.addEventListener('keyup', checkValidInputOnPeople)
+bill.addEventListener('change', checkValidInputOnBill)
+numberOfPeople.addEventListener('change', checkValidInputOnPeople)
 resetBtn.addEventListener('click', reset)
+form.addEventListener('change', getTotal)

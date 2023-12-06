@@ -46,7 +46,7 @@
               <input type="text" name="bill" id="bill" placeholder="0" />
             </label>
           </fieldset>
-          <fieldset id="tip_select">
+          <fieldset id="tip_select" class="tips">
             <legend>Select Tip %</legend>
             <label for="five_percent" class="percent">
               <input type="radio" value="0.05" id="five_percent" name="tip" />
@@ -78,13 +78,10 @@
               <input type="radio" value="0.5" id="fifty_percent" name="tip" />
               <span class="radio_text">50%</span>
             </label>
-            <label for="custom_percent" class="percent custom">
-              <input
-                type="text"
-                id="custom_percent"
-                name="tip"
-                placeholder="Custom"
-              />
+            <label for="custom" class="percent">
+              <input type="radio" value="custom" id="custom" name="tip" />
+              <input type="text" id="custom_tip" name="tip" hidden />
+              <span class="radio_text">Custom</span>
             </label>
           </fieldset>
           <fieldset id="number_of_people">

@@ -97,15 +97,6 @@ label > small {
   transform: translateY(-50%);
 }
 
-#tip_select {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.3em;
-  justify-items: center;
-  align-content: space-between;
-  margin-bottom: 2rem;
-}
-
 #tip_select legend {
   margin-bottom: 2rem;
 }
@@ -114,67 +105,51 @@ label > small {
   appearance: none;
 }
 
+#tip_select {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  margin-bottom: 2rem;
+}
+
 .percent {
-  background-color: var(--very-dark-cyan);
-  width: 9em;
-  padding: 0.5rem 1.5rem;
   color: var(--very-light-gray-cyan);
   display: flex;
   justify-content: center;
   align-content: center;
   font-size: 1.3em;
   border-radius: 10px;
-  /* margin-top: 2rem; */
   cursor: pointer;
   position: relative;
+  background-color: var(--very-dark-cyan);
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
 }
 
 .percent span {
-  z-index: 1;
   font-size: 1.5em;
+  background-color: var(--very-dark-cyan);
+  padding: 0.5em 1em;
+  width: 100%;
 }
 
-.custom.percent {
-  background-color: var(--very-light-gray-cyan);
-}
-
-#custom_percent {
-  font-size: 1.3em;
-  max-width: 100%;
-  border: none;
-  text-align: end;
-  border-radius: 10px;
-}
-
-#custom_percent::placeholder {
-  color: var(--gray-cyan);
-  font-family: 'Space Mono', sans-serif;
-  text-align: end;
-}
-
-#custom_percent:focus {
-  outline: 2px solid var(--strong-cyan);
-}
-
-input[type='radio']::before {
-  content: '';
+#custom_tip {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: var(--light-gray-cyan);
   width: 100%;
   height: 100%;
-  opacity: 0;
-  transition: all 0.2s ease;
-  border-radius: 8px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.5em;
+  padding: 0 1em;
+  text-align: right;
 }
 
-input[type='radio']:checked::before {
-  opacity: 1;
-}
-
-.percent:focus input[type='radio']:checked::before span {
+.percent input[type='radio']:checked + span {
   color: var(--very-dark-cyan);
+  background-color: var(--light-gray-cyan);
 }
 
 .display_calculations {
