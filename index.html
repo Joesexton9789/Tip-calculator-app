@@ -37,11 +37,11 @@
 
     <main>
       <section class="calculations">
-        <form action="">
+        <form id="form">
           <fieldset id="bill_amount">
             <legend>Bill</legend>
             <label for="bill" id="bill_label">
-              <small>Can't be zero</small>
+              <small></small>
               <img class="dollar" src="./images/icon-dollar.svg" alt="" />
               <input type="text" name="bill" id="bill" placeholder="0" />
             </label>
@@ -49,17 +49,17 @@
           <fieldset id="tip_select">
             <legend>Select Tip %</legend>
             <label for="five_percent" class="percent">
-              <input type="radio" value="5%" id="five_percent" name="tip" />
+              <input type="radio" value="0.05" id="five_percent" name="tip" />
               <span class="radio_text">5%</span>
             </label>
             <label for="ten_percent" class="percent">
-              <input type="radio" value="10%" id="ten_percent" name="tip" />
+              <input type="radio" value="0.1" id="ten_percent" name="tip" />
               <span class="radio_text">10%</span>
             </label>
             <label for="fifthteen_percent" class="percent">
               <input
                 type="radio"
-                value="15%"
+                value="0.15"
                 id="fifthteen_percent"
                 name="tip"
               />
@@ -68,14 +68,14 @@
             <label for="twenty_five_percent" class="percent">
               <input
                 type="radio"
-                value="25%"
+                value="0.25"
                 id="twenty_five_percent"
                 name="tip"
               />
               <span class="radio_text">25%</span>
             </label>
             <label for="fifty_percent" class="percent">
-              <input type="radio" value="50%" id="fifty_percent" name="tip" />
+              <input type="radio" value="0.5" id="fifty_percent" name="tip" />
               <span class="radio_text">50%</span>
             </label>
             <label for="custom_percent" class="percent custom">
@@ -90,7 +90,7 @@
           <fieldset id="number_of_people">
             <legend>Number of People</legend>
             <label for="number_people" id="people">
-              <small>Can't be zero</small>
+              <small></small>
               <img class="person" src="./images/icon-person.svg" alt="" />
               <input type="text" id="number_people" placeholder="0" />
             </label>
@@ -105,14 +105,14 @@
             <small>/ person</small>
           </div>
           <div class="tip_amount_right">
-            <span id="tip_amount">$4.27</span>
+            <span id="tip_amount">$0.00</span>
           </div>
           <div class="total_amount_left">
             <h5>Total</h5>
             <small>/ person</small>
           </div>
           <div class="total_amount_right">
-            <span id="total_amount">$32.79</span>
+            <span id="total_amount">$0.00</span>
           </div>
           <button class="btn grid-span-two-cols">reset</button>
         </div>
@@ -127,5 +127,6 @@
         >. Coded by <a href="#">Joe Sexton</a>.
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
