@@ -9,6 +9,9 @@ const label2 = document.getElementById('bill_label')
 const smallTag = label.querySelector('small')
 const billSmallTag = label2.querySelector('small')
 const radio = document.querySelectorAll("input[type='radio']")
+const customLabel = document.querySelector('.percent')
+const customTip = document.getElementById('custom_tip')
+const labels = document.getElementById('tip_select')
 
 let billTotal
 let total
