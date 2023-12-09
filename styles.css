@@ -29,11 +29,11 @@ header {
 
 main {
   background-color: var(--white);
-  max-width: 500px;
-  width: 100%;
+  /* max-width: 500px; */
+
   padding: 2rem;
   border-radius: 20px;
-  margin: 3rem 0;
+  margin: 3rem 1rem;
 }
 
 legend {
@@ -218,4 +218,45 @@ label > small {
 
 .btn:active {
   background-color: var(--light-gray-cyan);
+}
+
+@media (min-width: 48em) {
+  main {
+    display: flex;
+  }
+
+  #tip_select {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .calculations {
+    margin-right: 2rem;
+    width: 50%;
+  }
+
+  .display_calculations {
+    width: 50%;
+  }
+
+  .grid {
+    position: relative;
+    min-height: 100%;
+    align-content: flex-start;
+  }
+
+  .btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .percent span {
+    font-size: 1.2em;
+    padding: 0.3em 0.5em;
+  }
+
+  div > h5 {
+    font-size: 9em;
+  }
 }

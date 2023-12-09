@@ -8,17 +8,10 @@ const label1 = document.getElementById('people')
 const label2 = document.getElementById('bill_label')
 const smallTag = label1.querySelector('small')
 const billSmallTag = label2.querySelector('small')
-<<<<<<< HEAD
 // const radio = document.querySelectorAll("input[type='radio']")
 const custom = document.getElementById('custom')
 const customTip = document.getElementById('custom_tip')
 const label = document.querySelectorAll('label')
-=======
-const radio = document.querySelectorAll("input[type='radio']")
-const customLabel = document.querySelector('.percent')
-const customTip = document.getElementById('custom_tip')
-const labels = document.getElementById('tip_select')
->>>>>>> 04a8415998cdefc4ae60e3f5108f50169b3e1371
 
 let billTotal
 let total
