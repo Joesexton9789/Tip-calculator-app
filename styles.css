@@ -145,6 +145,12 @@ label > small {
   font-size: 1.5em;
   padding: 0 1em;
   text-align: right;
+  background-color: var(--light-gray-cyan);
+  border-color: 2px solid var(--strong-cyan);
+}
+
+#custom_tip:focus {
+  outline: 1px solid var(--strong-cyan);
 }
 
 .percent input[type='radio']:checked + span {
