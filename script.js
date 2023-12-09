@@ -4,21 +4,46 @@ const numberOfPeople = document.getElementById('number_people')
 const tipAmount = document.getElementById('tip_amount')
 const totalAmount = document.getElementById('total_amount')
 const resetBtn = document.querySelector('.btn')
-const label = document.getElementById('people')
+const label1 = document.getElementById('people')
 const label2 = document.getElementById('bill_label')
-const smallTag = label.querySelector('small')
+const smallTag = label1.querySelector('small')
 const billSmallTag = label2.querySelector('small')
-const radio = document.querySelectorAll("input[type='radio']")
+// const radio = document.querySelectorAll("input[type='radio']")
+const custom = document.getElementById('custom')
+const customTip = document.getElementById('custom_tip')
+const label = document.querySelectorAll('label')
 
 let billTotal
 let total
 let tip
 let people
 
+label.forEach(labels => {
+  labels.addEventListener('click', () => {
+    if (!labels.classList.contains('custom_percent')) {
+      if (!custom.getAttribute('hidden')) {
+        customTip.setAttribute('hidden', true)
+        custom.removeAttribute('hidden')
+      }
+    }
+  })
+})
+
+function showCustomInput() {
+  customTip.hidden = false
+  custom.hidden = true
+  customTip.focus()
+}
+
 function getTotal() {
   billTotal = parseFloat(bill.value)
   people = parseFloat(numberOfPeople.value)
-  tip = parseFloat(form['tip'].value * billTotal)
+  if (custom.checked) {
+    tip = parseFloat((customTip.value / 100) * billTotal)
+    console.log(tip)
+  } else {
+    tip = parseFloat(form['tip'].value * billTotal)
+  }
   total = parseFloat((billTotal + tip) / people).toFixed(2)
   console.log(billTotal)
   console.log(people)
@@ -72,3 +97,4 @@ bill.addEventListener('input', checkValidInputOnBill)
 numberOfPeople.addEventListener('input', checkValidInputOnPeople)
 resetBtn.addEventListener('click', reset)
 form.addEventListener('input', getTotal)
+custom.addEventListener('click', showCustomInput)
